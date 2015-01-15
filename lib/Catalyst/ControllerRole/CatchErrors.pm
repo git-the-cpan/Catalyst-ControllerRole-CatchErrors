@@ -1,5 +1,5 @@
 package Catalyst::ControllerRole::CatchErrors;
-$Catalyst::ControllerRole::CatchErrors::VERSION = '0.04';
+$Catalyst::ControllerRole::CatchErrors::VERSION = '0.05';
 use Moose::Role;
 
 requires qw/ catch_errors end /;
@@ -30,7 +30,7 @@ Catalyst::ControllerRole::CatchErrors - custom error handling in your controller
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -55,6 +55,13 @@ during the request.
 
 You can rethrow the error in C<catch_errors>. C<Catalyst::ControllerRole::CatchErrors> passes a copy of the errors
 to your method and clears the original ones before calling C<catch_errors>.
+
+=head2 HTTP::Exception errors
+
+By default, C<Catalyst> does not catch errors confirming to the interface described by
+L<Plack::Middleware::HTTPExceptions> and lets the middleware deal with it.
+You can enable the C<always_catch_http_exceptions> in your C<Catalyst> configuration to
+let C<Catalyst::ControllerRole::CatchErrors> catch these errors as well.
 
 =head1 AUTHOR
 

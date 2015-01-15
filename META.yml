@@ -26,4 +26,4 @@ resources:
   bugtracker: https://github.com/davewood/catalyst-controllerrole-catcherrors/issues
   homepage: https://github.com/davewood/catalyst-controllerrole-catcherrors
   repository: https://github.com/davewood/catalyst-controllerrole-catcherrors.git
-version: '0.04'
+version: '0.05'
